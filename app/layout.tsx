@@ -1,6 +1,5 @@
-
 import './globals.css'
-import { SessionProvider } from 'next-auth/react'
+import Providers from '@/components/Providers'
 import Nav from '@/components/Nav'
 
 export const metadata = {
@@ -12,11 +11,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <body>
-        <SessionProvider>
+        <Providers>
           <Nav />
           <main className="container py-8">{children}</main>
-        </SessionProvider>
+        </Providers>
       </body>
     </html>
   )
 }
+
